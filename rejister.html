@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <title>rejistration</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section>
+        <div class="position-relative">
+            <img src="img/download.jpg" class="w-100" style="height:100vh" alt="">
+            <div class="position-absolute  top-50 start-50 translate-middle">
+                <div class="container box1 box2 box3 box4 bg2">
+                    <div class="d-flex">
+                        <div class="col-5 text-light box3 box1 bg-1">
+
+                            <div class="p-5">
+                                <div class="fs-1"><strong>Rejister</strong></div>
+                                <br>
+                                <div><span>Create your account to get started</span></div>
+                                <br>
+                                <br>
+                                <form action="">
+                                    <div>Full Name <label for=""><i class="fa-regular fa-user" style="color: #caf0f8ff;"></i></label><br>
+                                    <input type="text" class="login-input" id="fullname" placeholder="name" required></div>
+                                    <br>
+                                    <div>E-mail <label for=""><i class="fa-solid fa-envelope"style="color: #caf0f8ff;"></i></label>
+                                    <br>
+                                    <input type="email" class="login-input" id="email" placeholder="email" required></div>
+                                    <br>
+                                    <div>Password <label for=""><i class="fa-solid fa-key" style="color: #caf0f8ff;"></i></label>
+                                    <br>
+                                    <input type="password" class="login-input" id="password" placeholder="enter your password" required>
+                                    </div>
+                                    <br>
+                                    <input type="checkbox" required><label for="">agree with term and condition</label>
+                                    <br>
+                                    <div><button type="button" onclick="saveData()" class="b2login">Sign up</button></div>
+                                </form>
+                                <p> Already registered?
+                                 <a href="login.html" class="text-secondary">Login here</a>
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="col-7 w-100 ">
+                            <div><img src="img/ChatGPT Image Feb 5, 2026, 04_05_07 PM.png" class="w-100 h-100 box2 box4"
+                                    alt=""></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+        <script>
+            function saveData(){
+                let fullname = document.getElementById("fullname").value;
+                let email = document.getElementById("email").value;
+                let password = document.getElementById("password").value;
+
+                if(fullname === "" || email === ""  || password === ""){
+                    alert("enter all the details");
+                }
+                else{
+                    localStorage.setItem("fullname" , fullname);
+                    localStorage.getItem("email" , email);
+                    localStorage.getItem("password" , password);
+                    alert("rejistered sucessfullyyyy");
+                    window.location.href = "index.html";
+                }
+            }
+        </script>
+</body>
+</html>

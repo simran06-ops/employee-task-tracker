@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <title>login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section>
+        <div class="position-relative ">
+            <img src="img/download.jpg" class="w-100" style="height:100vh" alt="">
+            <div class="position-absolute top-50 start-50 translate-middle">
+
+                <div class="container  p-5">
+                    <div class="d-flex">
+
+
+                        <div class="col-7 box1 box3 bg-light p-3 ">
+                            <div class="fs-1 ps-3 text-primary pt-2">Employee</div>
+                            <div class="fs-1 text-primary ps-3">Task Tracker</div>
+                            <br>
+                            <span class="text-primary ps-3">Organize your work and track progress efficiently</span>
+                            <br>
+                            <br>
+                            <br>
+                            <div><img src="img/ChatGPT Image Feb 5, 2026, 03_02_54 PM.png" class="w-100 " alt=""></div>
+                        </div>
+
+
+                        <div class="col-5 box2 box4 bg-1 p-5 text-light">
+                            <div class="p-5 justify-content-between">
+                                <div class=" fs-1 text-center"><strong>Login</strong></div>
+                                <br>
+                                <br>
+                                <form id="loginform" >
+                                    <div>E-mail <label for=""><i class="fa-solid fa-envelope"
+                                                style="color: #caf0f8ff;"></i></label></div>
+                                    <input type="email" class="login-input" id="email" placeholder="E-mail" required>
+                                    <br>
+                                    <br>
+                                    <div>Password <label for=""><i class="fa-solid fa-key" style="color: #caf0f8ff;"></i></label></div>
+                                    <input type="password" class="login-input" id="password" placeholder="password" required>
+                                    <br>
+                                    <br>
+                                    <span class="text-span">enter password</span>
+                                    <br>
+                                    <br>
+                                    <div class="text-center">
+                                        <button type="button" onclick="saveData()" class="blogin">Log in</button>
+                                    </div>
+                                </form>
+                                <p>
+                                    Haven't registered?
+                                    <a href="rejister.html" class="text-secondary">Rejister here</a>
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <script>
+
+       
+function saveData(){
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            if(email === "" || password === ""){
+                alert("enter all details");
+                }
+            else{
+                localStorage.setItem("email", email);
+                localStorage.setItem("password" , password);
+                alert("login sucessfully"); 
+                window.location.href = "index.html";
+  
+            }
+            
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!--=========BACKGROUND PICTURE=======-->
+    <div class="position-relative">
+        <img src="img/WhatsApp Image 2026-02-06 at 5.00.09 PM (1).jpeg" class="w-100 opacity1 img" alt="">
+        <div class="position-absolute start-0 top-0 ">
+
+
+
+
+            <!--===NAV BAR===-->
+
+
+
+            <section>
+                <div class="container-fluid ps-0 pb-3 ">
+                    <nav class="d-flex ps-2  justify-content-between">
+                        <ul>
+                            <li>
+                                <a href="#" onclick="showTasks('tasks')">Task</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="showFeedback('feedback')">Feedback</a>
+                            </li>
+                            <li class="pe-3">
+                                <a href="#" onclick="showContact('contact')">Contact</a>
+                            </li>
+                        </ul>
+                        <div><label for="" class="pe-5  me-5 text-light"><i class="fa-regular fa-user pe-2"
+                                    style="color: #ffffff;"></i>Admin</label></div>
+                    </nav>
+                </div>
+            </section>
+
+
+
+
+
+            <!--====TASK NUMBER====-->
+
+
+
+
+            <section class="ps-5">
+                <div class="container-fluid pt-3 ">
+                    <div class="col-12 ps-5 ">
+                        <div class="d-flex">
+                            <div class="col-3 bg2 boxin p-2 ms-5 m-3 boxt2">
+                                <label for=""><i class="fa-solid fa-file" style="color: #bde0fe;"></i> Total
+                                    Task</label><br><br>
+                            </div>
+                            <div class="col-3 bg-7 boxin p-2 m-3 boxt1">
+                                <label for=""><i class="fa-solid fa-hourglass-half" style="color: #123b82;"></i> Pending
+                                    Task</label><br><br>
+                            </div>
+                            <div class="col-3 bg-7 boxin p-2 m-3 boxt1">
+                                <label for=""><i class="fa-solid fa-spinner" style="color: #123b82;"></i> In
+                                    Progress</label><br><br>
+                            </div>
+                            <div class="col-3 bg2 boxin p-2 m-3 boxt2">
+                                <label for=""><i class="fa-solid fa-square-check" style="color: #bde0fe;"></i> Completed
+                                    Task</label><br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+
+
+
+            <!--=====TASK=====-->
+
+
+
+            <section class="p-5 ms-5" id="tasks">
+                <div class="ms-5 ps-5">
+                    <div class="container boxsh box1 box2 box3 box4 bg-8">
+                        <div class="fs-3 p-2 pb-1 text-primary">
+                            <h1>Task Board <label for=""><i class="fa-regular fa-clipboard"
+                                        style="color: #151965;"></i></label></h1>
+                            <div class=" w-100  ">
+                                <form action="" class="border-bottom border-primary pb-4">
+                                    <div class="col-12 ps-5">
+                                        <div class="d-flex">
+                                            <div class="col-4 fs-3 fw"><label for="">Employee</label><br>
+                                                <input type="text" id="employeename" class="input2"
+                                                    placeholder="Enter employee name">
+                                            </div>
+                                            <div class="col-4 fs-3 fw"><label for="">Task</label><br>
+                                                <input type="text" id="task" class="input2" placeholder="Enter Task">
+                                            </div>
+                                            <div class="col-4 fs-3 fw">
+                                                <label for="">Enter Due Date <br><input type="date" id="duedate"
+                                                        class="input2" placeholder="Enter employee name"></label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-12 pt-2 ps-5">
+                                        <div class="d-flex">
+                                            <div class="col-6 fs-3 fw"><label for="status">Status</label><br>
+                                                <select name="status" class="input2" id="status">
+                                                    <option value="">status</option>
+                                                    <option value="completed"
+                                                        style="background-color: rgb(103, 219, 147); color: #ffffff;">
+                                                        completed</option>
+                                                    <option value="in progress"
+                                                        style="background-color: rgb(235, 235, 103);color: #ffffff;">in
+                                                        Progress</option>
+                                                    <option value="pending"
+                                                        style="background-color: rgb(217, 79, 79); color: #ffffff;">
+                                                        Pending</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-6 pt-3 fs-3 fw">
+                                                <button type="button" onclick="savedata()" class="blogin">ADD</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+                                <br>
+                                <br>
+                                <br>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+
+
+            <!--==TASK TABLE==-->
+
+
+
+
+            <section class="ms-5 ps-5 " style="padding-left: 100px;" id="tabletask">
+                <div class="container boxsh bg-8 boxx">
+                    <table class="fw fs-3 p-5 " style="color: #123b82; width: 100%; ">
+                        <thead>
+                            <tr>
+                                <td class="pe-5 border-bottom pb-2 border-secondary">
+                                    <strong class="fs-1 fw">
+                                        Employee
+                                    </strong>
+                                </td>
+                                <td class="pe-5 border-bottom pb-2 border-secondary">
+                                    <strong class="fs-1 fw">
+                                        Task
+                                    </strong>
+                                </td>
+                                <td class="pe-5 border-bottom pb-2 border-secondary">
+                                    <strong class="fs-1 fw">
+                                        Due Date
+                                    </strong>
+                                </td>
+                                <td class="pe-3 border-bottom pb-2 border-secondary">
+                                    <strong class="fs-1 fw">
+                                        Status
+                                    </strong>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody id="employee-tbody">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="border-bottom border-sec1"></div>
+
+            </section>
+
+
+
+
+            <!--==FEEDBACK==-->
+
+
+
+
+
+            <section id="feedback">
+                <div class="container box1 box2 box3 box4 pb-3 pt-5">
+
+                    <div class="position-relative">
+                        <img src="img/0c522a34-49a3-49b3-ba35-e0cc7adb7dc9.png"
+                            class="w-100 boxsh box1 box2 box3 box4  ps-5 ms-5" alt="">
+
+                        <div class="position-absolute start-0 top-0 ps-3 pt-1 ">
+                            <div class="text-primary ps-5 ms-5 fs-3 pb-3">
+                                <h1>Employee Feedback</h1>
+                                <span>share your feedback,complaint or suggestion regarding task or project below</span>
+                            </div>
+                            <div>
+                                <form action="">
+
+
+                                    <div class="ps-5 ms-5 pb-2 fs-3 fw text-primary">Your Name <br><input type="text"
+                                            id="name" class="w-75 input1 " placeholder="enter your name" required></div>
+
+                                    <div class="ps-5 ms-5 pb-2 fs-3 fw text-primary">Feedback Type <br><input
+                                            type="text" id="feedback" placeholder="enter your feedback type"
+                                            class="w-75 input1 text-primary" required></div>
+                                    <div class="ps-5 ms-5 pb-2 fs-3 fw text-primary">Message <label for=""><i
+                                                class="fa-regular fa-message"></i></label><br><textarea name=""
+                                            class="w-75 input1" id="txt" rows="10" cols="40"
+                                            placeholder="enter the message here"></textarea></div>
+                                    <div class="ps-5 ms-5 pb-2 fs-3 fw text-primary"><button type="button"
+                                         onclick="saveData()"  class="butin ">SEND</button></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="border-bottom border-sec"></div>
+            </section>
+
+
+
+
+
+
+            <!--==CONTATCT==-->
+
+
+
+
+            <section class="pt-4 ms-" style="margin-left: 200px;" id="contact">
+                <div class="container mt-2 m-3 pt-5 pe-5 boxx bg-primary">
+                    <div class="d-flex pt-2">
+                        <div class="col-6 p-3">
+                            <div class="fs-1 cont pb-3 ">contact in emergency</div>
+                            <span class=" text-light">This section allows employees to directly contact the HR or
+                                support team for private or urgent matters</span>
+                        </div>
+                        <div class="col-6 pt-5 mt-4 pb-5 text-light">
+                            <div class="fs-3 pb-1 ps-2"><label for=""><i class="fa-solid fa-phone"
+                                        style="color: #bde0fe;"></i></label>emergency conatct : +91xxxxxxxxxx</div>
+                            <div class="fs-3 pb-1 ps-2"><label for=""><i class="fa-solid fa-headphones"
+                                        style="color: #bde0fe;"></i></label>support line : +91xxxxxxxxxx</div>
+                            <div class="fs-3 pb-1 ps-2"><label for=""><i class="fa-solid fa-envelope"
+                                        style="color: #bde0fe;"></i></label>emergency email : urgent@company.com</div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--=====================JAVA SCRIPT======================-->
+
+
+    <script>
+        fetchdata();
+
+        function fetchdata() {
+            const thbody = document.getElementById("employee-tbody");
+            thbody.innerHTML = "";
+            let tasksdets = JSON.parse(localStorage.getItem("tasksdets")) || [];
+            for (let i of tasksdets) {
+                thbody.innerHTML += `<tr>
+                       <td>  ${i.employeename} </td>
+                       <td>  ${i.task} </td>
+                       <td>  ${i.duedate} </td>
+                       <td>  ${i.status} </td>
+                   </tr>`;
+            }
+        }
+        function savedata() {
+            const employeename = document.getElementById("employeename").value;
+            const task = document.getElementById("task").value;
+            const duedate = document.getElementById("duedate").value;
+            const status = document.getElementById("status").value;
+            const thbody = document.getElementById("employee-thbody");
+
+            let details = {
+                employeename: employeename,
+                task: task,
+                duedate: duedate,
+                status: status
+            }
+            let tasksdets = JSON.parse(localStorage.getItem("tasksdets")) || [];
+            tasksdets.push(details);
+            localStorage.setItem("tasksdets", JSON.stringify(tasksdets));
+            document.querySelector("form").reset();
+            fetchdata();
+        }
+
+
+        function showTasks() {
+            document.getElementById("feedback").style.display = "none";
+            document.getElementById("contact").style.display = "none";
+            document.getElementById("tabletask").style.display = "block";
+            document.getElementById("tasks").style.display = "block";
+        }
+
+        function showFeedback() {
+            document.getElementById("tasks").style.display = "none";
+            document.getElementById("contact").style.display = "none";
+            document.getElementById("tabletask").style.display = "none";
+            document.getElementById("feedback").style.display = "block";
+        }
+
+
+        function showContact() {
+            document.getElementById("tasks").style.display = "none";
+            document.getElementById("feedback").style.display = "none";
+            document.getElementById("tabletask").style.display = "none";
+            document.getElementById("contact").style.display = "block";
+        }
+         
+
+      function saveData(){
+            let name = document.getElementById("name").value;
+            let feedback = document.getElementById("feedback").value;
+            let txt = document.getElementById("txt").value;
+
+            if(name === "" || feedback === "" || txt === ""){
+                alert("fill all details");
+            }
+            else{
+                localStorage.setItem("name" , name);
+                localStorage.setItem("feedback" , feedback);
+                localStorage.setItem("txt" , txt);
+                alert("feedback sent sucessfully");
+
+                document.getElementById("name").value = "";
+                document.getElementById("feedback").value = "";
+                document.getElementById("txt").value = "";
+            }
+      }
+
+
+
+    </script>
+</body>
+
+</html>
