@@ -977,25 +977,6 @@ nav a:hover{
 
 }
 
-.butin2{
-    width: 150px;
-    padding: 10px;
-    border-radius: 10px;
-    color: #9fc9ff;
-    font-weight: 700;
-     background-color:rgb(18 , 59 , 130);
-    border:none;
-    text-align: center;
-    cursor: pointer;
-    box-shadow:10px 10px 10px #151965;
-    
-}
-.butin2:hover{
-    background-color:#9fc9ff;
-    color: #0c2466;
-    cursor:pointer;
-}
-
 .img {
     position: fixed; /* background image of index page*/
 }
