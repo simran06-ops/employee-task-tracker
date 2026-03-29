@@ -6,47 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>main page</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <section>
-        <div class="position-relative">
-            <img src="img/download.jpg" class="w-100" style="height:100vh" alt="">
-            <div class="position-absolute top-50 start-50 translate-middle">
+        <section>
+            <div class="position-relative ">
+                <img src="img/download.jpg" class="w-100" style="height:100vh" alt="">
+                <div class="position-absolute top-50 start-50 translate-middle">
 
-                <div class="container  p-3">
-                    <div class="d-flex">
+                    <div class="container  p-3">
+                        <div class="d-flex">
 
 
-                        <div class="col-7 box1 box3 bg-light p-3 ">
-                            <div class="fs ps-5 text-primary pt-5">Employee</div>
-                            <div class="fs text-primary ps-5"> Task Tracker <i class="fa-solid fa-list-check"></i>
+                            <div class="col-7 box1 box3 bg-light p-3 ">
+                                <div class="fs ps-5 text-primary pt-5 fw-1">Employee</div>
+                                <div class="fs text-primary ps-5 fw-1"> Task Tracker <i class="fa-solid fa-list-check"></i>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div><img src="img/ChatGPT Image Feb 5, 2026, 03_02_54 PM.png" class="w-100 " alt="">
+                                </div>
                             </div>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <div><img src="img/ChatGPT Image Feb 5, 2026, 03_02_54 PM.png" class="w-100 " alt="">
+
+
+                            <div class="col-5 box2 box4 bg-1 p-5 text-light">
+                                <div class="pt-4 p-2 fs-3">The Employee Task Tracker is a simple and efficient web page
+                                    designed to manage tasks and boost productivity. It allows easy task assignment,
+                                    deadline tracking, and real-time updates, helping teams stay organized and work more
+                                    effectively.
+
+                                </div>
+                                <br>
+                                <br>
+                                <div class="col-12 mb-3 ms-4 fs-1">
+                                    <label for="" class="ms-3"><i class="fa-solid fa-chart-column icon-pop"></i></label>
+                                    <label for="" class="ms-3"><i class="fa-regular fa-pen-to-square icon-pop"></i></label>
+                                    <label for="" class="ms-3"><i class="fa-regular fa-clock icon-pop"></i></label>
+                                    <label for="" class="ms-3"><i class="fa-regular fa-clipboard icon-pop"></i></label>
+                                </div>
+
+                                <div class="text-center">
+                                    <button type="button" onclick="onClick()" class="blogin">Let's start <label
+                                            for=""><i class="fa-solid fa-angles-right"></i></label></button>
+                                </div>
                             </div>
+
+
+
                         </div>
 
-                        <div class="col-5 box2 box4 bg-1 p-5 text-light">
-                            <div class="pt-4 p-2 fs-3">The Employee Task Tracker is a simple and efficient web page
-                                designed to manage tasks and boost productivity. It allows easy task assignment,
-                                deadline tracking, and real-time updates, helping teams stay organized and work more
-                                effectively.
-
-                            </div>
-                            <br>
-                            <br>
-                            <div class="text-center">
-                                <button type="button" onclick="onClick()" class="blogin">Let's start <label for=""><i
-                                            class="fa-solid fa-angles-right"></i></label></button>
-                            </div>
-                        </div>
 
                     </div>
+                </div>
+
+            </div>
+        </section>
     </section>
+
+
+    <script>
+        function onClick() {
+            window.location.href = "login.html";
+
+        }
+    </script>
 </body>
 
 </html>
