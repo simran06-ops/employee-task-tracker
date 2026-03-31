@@ -38,8 +38,8 @@
                                 <a href="#" onclick="showContact('contact')">Contact</a>
                             </li>
                         </ul>
-                        <div><label for="" class="pe-5  me-5 text-light"><i class="fa-regular fa-user pe-2"
-                                    style="color: #ffffff;"></i>Admin</label></div>
+                        <div><label for="" class="pe-5  me-5 text-light">employee task tracker <label for=""><i
+                                        class="fa-solid fa-list-check"></i></label></div>
                     </nav>
                 </div>
             </section>
@@ -59,19 +59,19 @@
                         <div class="d-flex">
                             <div class="col-3 bg-4 boxin p-2 ms-5 m-3 boxt2">
                                 <label for=""><i class="fa-solid fa-file" style="color: white;"></i> Total
-                                    Task</label><br><br>
+                                    Task</label><br><br><span id="total-count" class="fs text-light"></span>
                             </div>
                             <div class="col-3 bg-2 boxin p-2 m-3 boxt1">
                                 <label for=""><i class="fa-solid fa-hourglass-half" style="color: #123b82;"></i> Pending
-                                    Task</label><br><br>
-                            </div>
-                            <div class="col-3 bg-2 boxin p-2 m-3 boxt1">
-                                <label for=""><i class="fa-solid fa-spinner" style="color: #123b82;"></i> In
-                                    Progress</label><br><br>
+                                    Task</label><br><br><span id="pending-count" class="fs" style="color: #123b82;"></span>
                             </div>
                             <div class="col-3 bg-4 boxin p-2 m-3 boxt2">
-                                <label for=""><i class="fa-solid fa-square-check" style="color: white;"></i> Completed
-                                    Task</label><br><br>
+                                <label for=""><i class="fa-solid fa-spinner" style="color:white;"></i> In
+                                    Progress</label><br><br><span id="inprogress-count" class="fs text-light"></span>
+                            </div>
+                            <div class="col-3 bg-2 boxin p-2 m-3 boxt1">
+                                <label for=""><i class="fa-solid fa-square-check" style="color:#123b82;"></i> Completed
+                                    Task</label><br><br><span id="completed-count" class="fs"  style="color: #123b82;"></span>
                             </div>
                         </div>
                     </div>
@@ -96,15 +96,15 @@
                                 <form action="" class="border-bottom border-primary pb-4">
                                     <div class="col-12 ps-5">
                                         <div class="d-flex">
-                                            <div class="col-4 fs-3 fw"><label for="">Employee</label><br>
+                                            <div class="col-4 fs-3 fw-1"><label for="">Employee</label><br>
                                                 <input type="text" id="employeename" class="input2"
                                                     placeholder="Enter employee name">
                                             </div>
-                                            <div class="col-4 fs-3 fw"><label for="">Task</label><br>
+                                            <div class="col-4 fs-3 fw-1"><label for="">Task</label><br>
                                                 <input type="text" id="task" class="input2" placeholder="Enter Task">
                                             </div>
-                                            <div class="col-4 fs-3 fw">
-                                                <label for="">Enter Due Date <br><input type="date" id="duedate"
+                                            <div class="col-4 fs-3 fw-1">
+                                                <label for="">Due Date<br><input type="date" id="duedate"
                                                         class="input2" placeholder="Enter employee name"></label>
                                             </div>
 
@@ -112,22 +112,16 @@
                                     </div>
                                     <div class="col-12 pt-2 ps-5">
                                         <div class="d-flex">
-                                            <div class="col-6 fs-3 fw"><label for="status">Status</label><br>
+                                            <div class="col-6 fs-3 fw-1"><label for="status">Status</label><br>
                                                 <select name="status" class="input2" id="status">
-                                                    <option value="">status</option>
-                                                    <option value="completed"
-                                                        style="background-color: rgb(103, 219, 147); color: #ffffff;">
-                                                        completed</option>
-                                                    <option value="in progress"
-                                                        style="background-color: rgb(235, 235, 103);color: #ffffff;">in
-                                                        Progress</option>
-                                                    <option value="pending"
-                                                        style="background-color: rgb(217, 79, 79); color: #ffffff;">
-                                                        Pending</option>
+                                                    <option value="" disabled selected>select status</option>
+                                                    <option value="completed" style=" color:#0e1f4e;">COMPLETE</option>
+                                                    <option value="in progress" style="color:#0e1f4e;">INPROGRESS</option>
+                                                    <option value="pending" style="color:#0e1f4e;">PENDING</option>
                                                 </select>
                                             </div>
 
-                                            <div class="col-6 pt-3 fs-3 fw">
+                                            <div class="col-6 pt-3 fs-3 fw-1">
                                                 <button type="button" onclick="savedata()" class="blogin">ADD</button>
                                             </div>
                                         </div>
@@ -154,30 +148,25 @@
 
 
             <section class="ms-5 ps-5 " style="padding-left: 100px;" id="tabletask">
-                <div class="container boxsh bg-3 boxx">
-                    <table class="fw fs-3 p-5 " style="color: #123b82; width: 100%; ">
+                <div class="container boxsh1 bg-5 boxx">
+                    <table class="fw fs-3 p-5 text-light" style="width: 100%; ">
                         <thead>
                             <tr>
-                                <td class="pe-5 border-bottom pb-2 border-secondary">
-                                    <strong class="fs-1 fw">
-                                        Employee
-                                    </strong>
-                                </td>
-                                <td class="pe-5 border-bottom pb-2 border-secondary">
-                                    <strong class="fs-1 fw">
-                                        Task
-                                    </strong>
-                                </td>
-                                <td class="pe-5 border-bottom pb-2 border-secondary">
-                                    <strong class="fs-1 fw">
-                                        Due Date
-                                    </strong>
-                                </td>
-                                <td class="pe-3 border-bottom pb-2 border-secondary">
-                                    <strong class="fs-1 fw">
+                                <th class="p-3 border-bottom text-center fs-1 fw border-secondary">
+                                   Employee
+                                </th>
+                                <th class="p-3 border-bottom  text-center fs-1 fw border-secondary">
+                                    Task
+                                </th>
+                                <th class="p-3 border-bottom  text-center fs-1 fw border-secondary">
+                                    Due Date
+                                </th>
+                                <th class="p-3 border-bottom  text-center fs-1 fw border-secondary">
                                         Status
-                                    </strong>
-                                </td>
+                                </th>
+                                <th class="p-3 border-bottom text-center fs-1 fw border-secondary">
+                                    <strong class="fs-3 fw"><label for=""><i class="fa-solid fa-pencil"></i>/<i class="fa-solid fa-trash"></i></label></strong>
+                                </th>
                             </tr>
                         </thead>
                         <tbody id="employee-tbody">
@@ -208,24 +197,30 @@
                         <div class="position-absolute start-0 top-0 ps-3 pt-1 ">
                             <div class="text-primary ps-5 ms-5 fs-3 pb-3">
                                 <h1>Employee Feedback</h1>
-                                <span>share your feedback,complaint or suggestion regarding task or project below</span>
+                                <span>Share your feedback,complaint or suggestion regarding task or project below....</span>
                             </div>
                             <div>
                                 <form action="">
 
 
-                                    <div class="ps-5 ms-5 pb-2 fs-3 fw text-primary">Your Name <br><input type="text"
+                                    <div class="ps-5 ms-5 pb-2 fs-3 fw-1 text-primary">Your Name <br><input type="text"
                                             id="name" class="w-75 input1 " placeholder="enter your name" required></div>
 
-                                    <div class="ps-5 ms-5 pb-2 fs-3 fw text-primary">Feedback Type <br><input
-                                            type="text" id="feedback" placeholder="enter your feedback type"
-                                            class="w-75 input1 text-primary" required></div>
-                                    <div class="ps-5 ms-5 pb-2 fs-3 fw text-primary">Message <label for=""><i
+                                    <div class="ps-5 ms-5 pb-2 fs-3 fw-1 text-primary">Feedback Type <br>
+                                    <select name="" id="feedback" placeholder="enter your feedback type"
+                                            class="w-75 input1 text-primary" required>
+                                        <option value="" disabled selected>Select feedback</option>
+                                        <option value="Complaint">Complaint</option>    
+                                        <option value="Suggestion">Suggestion</option>    
+                                        <option value="General">General</option>    
+                                    </select>
+                                    </div>
+                                    <div class="ps-5 ms-5 pb-2 fs-3 fw-1 text-primary">Message <label for=""><i
                                                 class="fa-regular fa-message"></i></label><br><textarea name=""
                                             class="w-75 input1" id="txt" rows="10" cols="40"
                                             placeholder="enter the message here"></textarea></div>
-                                    <div class="ps-5 ms-5 pb-2 fs-3 fw text-primary"><button type="button"
-                                         onclick="saveData()"  class="butin ">SEND</button></div>
+                                    <div class="ps-5 ms-5 pb-2 fs-3 fw-1 text-primary"><button type="button"
+                                            onclick="saveData()" class="butin ">SEND</button></div>
                                 </form>
                             </div>
                         </div>
@@ -241,42 +236,42 @@
 
 
 
-            <!--==CONTATCT==-->
+            <!--==CONTACT==-->
 
 
 
 
-            <section class="pt-4 ms-" style="margin-left: 200px;" id="contact">
-                <footer>
-                                    <div class="container mt-2 m-3 pt-5 pe-5 boxx bg-primary">
-                    <div class="d-flex pt-2">
-                        <div class="col-6 p-3">
-                            <div class="fs-1 cont pb-3 ">contact in emergency</div>
-                            <span class=" text-light">This section allows employees to directly contact the HR or
-                                support team for private or urgent matters</span>
+            <section class="pt-4" style="margin-left: 200px;" id="contact">
+                <footer class="">
+                    <div class="container mt-2 m-3 pt-3 pe-5 boxx bg-5">
+                        <div class="d-flex pt-2">
+                            <div class="col-6 p-3">
+                                <div class="fs-1 cont pb-3 ">contact in emergency</div>
+                                <span class=" text-light">This section allows employees to directly contact the HR or
+                                    support team for private or urgent matters</span>
+                            </div>
+                            <div class="col-6 pt-2 mt-4 pb-5 text-light">
+                                <div class="fs-3 pb-1 ps-2"><label for=""><i class="fa-solid fa-phone"
+                                            style="color: #bde0fe;"></i></label>emergency contact : +91xxxxxxxxxx</div>
+                                <div class="fs-3 pb-1 ps-2"><label for=""><i class="fa-solid fa-headphones"
+                                            style="color: #bde0fe;"></i></label>support line : +91xxxxxxxxxx</div>
+                                <div class="fs-3 pb-1 ps-2"><label for=""><i class="fa-solid fa-envelope"
+                                            style="color: #bde0fe;"></i></label>emergency email : urgent@company.com
+                                </div>
+                            </div>
+
                         </div>
-                        <div class="col-6 pt-5 mt-4 pb-5 text-light">
-                            <div class="fs-3 pb-1 ps-2"><label for=""><i class="fa-solid fa-phone"
-                                        style="color: #bde0fe;"></i></label>emergency conatct : +91xxxxxxxxxx</div>
-                            <div class="fs-3 pb-1 ps-2"><label for=""><i class="fa-solid fa-headphones"
-                                        style="color: #bde0fe;"></i></label>support line : +91xxxxxxxxxx</div>
-                            <div class="fs-3 pb-1 ps-2"><label for=""><i class="fa-solid fa-envelope"
-                                        style="color: #bde0fe;"></i></label>emergency email : urgent@company.com</div>
-                        </div>
-
                     </div>
-                </div>
+
                 </footer>
             </section>
 
+                            <div class="border-bottom border-sec"></div>
+
+
+
         </div>
     </div>
-
-
-
-
-
-
 
 
 
