@@ -287,28 +287,73 @@
     <!--=====================JAVA SCRIPT======================-->
 
 
-    <script>
+  <script> 
+
+    //count of number
+
+    function updateCounts(){
+        let tasksdets = JSON.parse(localStorage.getItem("tasksdets")) || [];
+
+        let total = tasksdets.length;
+        let pending = 0;
+        let inprogress = 0;
+        let completed = 0;
+
+        for(let i = 0 ; i < tasksdets.length ; i++){
+            if (tasksdets[i].status === "pending"){
+                pending = pending + 1;
+            }
+             if (tasksdets[i].status === "in progress"){
+                inprogress = inprogress + 1;
+            }
+             if (tasksdets[i].status === "completed"){
+                completed = completed + 1;
+            }
+        }
+
+        document.getElementById("total-count").innerText = total ;
+        document.getElementById("pending-count").innerText = pending;
+        document.getElementById("inprogress-count").innerText = inprogress;
+        document.getElementById("completed-count").innerText = completed;
+
+
+    }
+
+    //task table
+
         fetchdata();
 
         function fetchdata() {
             const thbody = document.getElementById("employee-tbody");
             thbody.innerHTML = "";
             let tasksdets = JSON.parse(localStorage.getItem("tasksdets")) || [];
-            for (let i of tasksdets) {
+            for (let index = 0 ; index < tasksdets.length; index++) {
+                let i = tasksdets[index];
                 thbody.innerHTML += `<tr>
-                       <td>  ${i.employeename} </td>
-                       <td>  ${i.task} </td>
-                       <td>  ${i.duedate} </td>
-                       <td>  ${i.status} </td>
+                       <td class="textcap text-center fs-4">${i.employeename} </td>
+                       <td class="textcap text-center fs-4">${i.task} </td>
+                       <td class="textcap text-center fs-4">${i.duedate} </td>
+                       <td class="textcap text-center fs-4">${i.status} ${i.status === 'completed' ? '🟢' : i.status === 'in progress' ? '🟡' : i.status === 'pending' ? '🔴' : ''}</td>
+                    <td class="">   <button onclick="editTask(${index})" class="butdel"><i class="fa-solid fa-pencil"></i></button> 
+                         <button onclick="deleteTask(${index})" class="butdel"><i class="fa-solid fa-trash"></i></button> </td>
                    </tr>`;
+                   updateCounts();
             }
         }
+
+
+
         function savedata() {
             const employeename = document.getElementById("employeename").value;
             const task = document.getElementById("task").value;
             const duedate = document.getElementById("duedate").value;
             const status = document.getElementById("status").value;
             const thbody = document.getElementById("employee-thbody");
+
+            if ( employeename === "" || task === "" || duedate === "" || status === ""){
+                alert("please fill all fields!");
+                return;
+            }
 
             let details = {
                 employeename: employeename,
@@ -323,6 +368,28 @@
             fetchdata();
         }
 
+        function deleteTask(index){
+            let tasksdets = JSON.parse(localStorage.getItem("tasksdets")) || [] ;
+            tasksdets.splice(index , 1);
+            localStorage.setItem("tasksdets" , JSON.stringify(tasksdets));
+            fetchdata();
+        }
+
+        function editTask(index){
+            let tasksdets = JSON.parse(localStorage.getItem("tasksdets")) || [] ;
+            let task = tasksdets[index] ;
+            document.getElementById("employeename").value = task.employeename;
+            document.getElementById("task").value = task.task;
+            document.getElementById("duedate").value = task.duedate;
+            document.getElementById("status").value = task.status;
+
+            tasksdets.splice(index, 1);
+            localStorage.setItem("tasksdets" , JSON.stringify(tasksdets));
+            fetchdata();
+
+        }
+
+//visible section 
 
         function showTasks() {
             document.getElementById("feedback").style.display = "none";
@@ -345,31 +412,33 @@
             document.getElementById("tabletask").style.display = "none";
             document.getElementById("contact").style.display = "block";
         }
-         
 
-      function saveData(){
+        //feedback section
+
+        function saveData() {
             let name = document.getElementById("name").value;
             let feedback = document.getElementById("feedback").value;
             let txt = document.getElementById("txt").value;
 
-            if(name === "" || feedback === "" || txt === ""){
+            if (name === "" || feedback === "" || txt === "") {
                 alert("fill all details");
             }
-            else{
-                localStorage.setItem("name" , name);
-                localStorage.setItem("feedback" , feedback);
-                localStorage.setItem("txt" , txt);
+            else {
+                localStorage.setItem("feedbackName", name);
+                localStorage.setItem("feedbackType", feedback);
+                localStorage.setItem("feedbackMsg", txt);
                 alert("feedback sent sucessfully");
 
                 document.getElementById("name").value = "";
                 document.getElementById("feedback").value = "";
                 document.getElementById("txt").value = "";
             }
-      }
+        }
 
 
 
     </script>
+
 </body>
 
 </html>
