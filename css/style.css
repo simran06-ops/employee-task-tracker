@@ -636,6 +636,10 @@ body {
 }
 
 /*font size*/
+.fs {
+     font-size: 30px;
+
+}
 
 .fs-1 {
     font-size: 25px;
@@ -648,6 +652,10 @@ body {
 
 .fs-3 {
     font-size: 18px;
+}
+
+.fs-4 {
+    font-size: 16px;
 }
 
 /*text case*/
@@ -683,9 +691,8 @@ body {
 
 /*background-color*/
 
-
-.bg-primary {
-    background-color: #1d678b;
+.bg-primary{
+    background-color: #01182c;
 }
 
 .bg-secondary {
@@ -753,7 +760,7 @@ body {
 }
 
 .border-secondary {
-    border-color: #123b82;
+    border-color: #b7b8b953;
 }
 
 .border-danger {
@@ -789,13 +796,18 @@ body {
 }
 .bg-2{
     background-color: #bde0fe;
-}
+}  
 .bg-3{
     background-color: #a2d2ff;
 }
 .bg-4{
+    background-color:  #023e8aff;
+}
+.bg-5 {
     background-color: #023e8a;
-
+}
+.bg-6{
+    background-color:  #0e1f4e;
 }
 /*---------------*/
 
@@ -904,7 +916,7 @@ nav a:hover{
     background-color: #bde0fe;
 }
 
-
+/*number box*/
 .boxin{
     border-radius: 20px;
     text-align: center;
@@ -914,22 +926,29 @@ nav a:hover{
 }
 .boxt1{
     color:rgb(18 , 59 , 130);
+    font-weight: 450;
 }
 .boxt2{
-    color: white;  
+    color: white; 
+    font-weight: 450;
+ 
 }
-
+/*shadows of the index page boxes*/
 .boxsh{
-    box-shadow: 10px 10px 1px  #4d99db;
+    box-shadow: 10px 10px 10px  #4d99db;
+}
+.boxsh1{
+     box-shadow: 10px 10px 10px  #000000;
+
 }
 
 
-
+/*feedback input*/
 .input1{  width: 320px;
     padding: 10px;
     border-radius: 10px;
     background-color:#a2d2ff;
-    color: white;
+    color:#151965 ;;
     border:none;
     box-shadow:10px 10px 10px #151965;
 }
@@ -964,7 +983,7 @@ nav a:hover{
 
 
 
-
+/*task*/
 .input2{
     width: 200px;
     padding: 10px;
@@ -976,7 +995,6 @@ nav a:hover{
     box-shadow:10px 10px 10px #2166cd;
 
 }
-
 .img {
     position: fixed; /* background image of index page*/
 }
@@ -1008,4 +1026,54 @@ nav a:hover{
     border-color:#9fc9ff;
     margin-top: 100px;
     margin-bottom: 20px;
+}
+
+/*task table*/
+
+/*delet and edit*/
+.butdel{
+    width: 40%;
+    padding: 10px;
+    border-radius: 10px;
+    color:  #0e1f4e;
+    background-color:  #a2d2ff;
+    border:none;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow:10px 10px 10px #151965;
+
+}
+/* boeder*/
+table {
+    border-collapse: collapse;
+    border: 2px solid #b7b8b953;
+    border-radius: 10px;     
+    overflow: hidden;            
+}
+
+td, th {
+    border: 1px solid #b7b8b953;
+    padding: 8px;
+}
+
+
+
+.icon-pop {
+    display: inline-block;
+    animation: pop 2s infinite ease-in-out;
+}
+
+@keyframes pop {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.fw-1{
+    font-weight:600;
+}
+
+.fw-2{
+    font-weight:00;
 }
