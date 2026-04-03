@@ -39,7 +39,8 @@
                             </li>
                         </ul>
                         <div><label for="" class="pe-5  me-5 text-light">employee task tracker <label for=""><i
-                                        class="fa-solid fa-list-check"></i></label></div>
+                                        class="fa-solid fa-list-check fa-bounce"
+                                        style="color: rgb(249, 251, 255);"></i></label></div>
                     </nav>
                 </div>
             </section>
@@ -58,20 +59,22 @@
                     <div class="col-12 ps-5 ">
                         <div class="d-flex">
                             <div class="col-3 bg-4 boxin p-2 ms-5 m-3 boxt2">
-                                <label for=""><i class="fa-solid fa-file" style="color: white;"></i> Total
+                                <label for=""><i class="fa-solid fa-file fa-beat" style="color: white;"></i> Total
                                     Task</label><br><br><span id="total-count" class="fs text-light"></span>
                             </div>
                             <div class="col-3 bg-2 boxin p-2 m-3 boxt1">
-                                <label for=""><i class="fa-solid fa-hourglass-half" style="color: #123b82;"></i> Pending
-                                    Task</label><br><br><span id="pending-count" class="fs" style="color: #123b82;"></span>
+                                <label for=""><i class="fa-solid fa-hourglass-half fa-spin" style="color: #123b82;"></i> Pending
+                                    Task</label><br><br><span id="pending-count" class="fs"
+                                    style="color: #123b82;"></span>
                             </div>
                             <div class="col-3 bg-4 boxin p-2 m-3 boxt2">
-                                <label for=""><i class="fa-solid fa-spinner" style="color:white;"></i> In
+                                <label for=""><i class="fa-solid fa-spinner fa-spin" style="color:white;"></i> In
                                     Progress</label><br><br><span id="inprogress-count" class="fs text-light"></span>
                             </div>
                             <div class="col-3 bg-2 boxin p-2 m-3 boxt1">
-                                <label for=""><i class="fa-solid fa-square-check" style="color:#123b82;"></i> Completed
-                                    Task</label><br><br><span id="completed-count" class="fs"  style="color: #123b82;"></span>
+                                <label for=""><i class="fa-solid fa-square-check fa-beat" style="color:#123b82;"></i> Completed
+                                    Task</label><br><br><span id="completed-count" class="fs"
+                                    style="color: #123b82;"></span>
                             </div>
                         </div>
                     </div>
@@ -104,8 +107,8 @@
                                                 <input type="text" id="task" class="input2" placeholder="Enter Task">
                                             </div>
                                             <div class="col-4 fs-3 fw-1">
-                                                <label for="">Due Date<br><input type="date" id="duedate"
-                                                        class="input2" placeholder="Enter employee name"></label>
+                                                <label for="">Due Date<br><input type="date" id="duedate" class="input2"
+                                                        placeholder="Enter employee name"></label>
                                             </div>
 
                                         </div>
@@ -116,7 +119,8 @@
                                                 <select name="status" class="input2" id="status">
                                                     <option value="" disabled selected>select status</option>
                                                     <option value="completed" style=" color:#0e1f4e;">COMPLETE</option>
-                                                    <option value="in progress" style="color:#0e1f4e;">INPROGRESS</option>
+                                                    <option value="in progress" style="color:#0e1f4e;">INPROGRESS
+                                                    </option>
                                                     <option value="pending" style="color:#0e1f4e;">PENDING</option>
                                                 </select>
                                             </div>
@@ -153,7 +157,7 @@
                         <thead>
                             <tr>
                                 <th class="p-3 border-bottom text-center fs-1 fw border-secondary">
-                                   Employee
+                                    Employee
                                 </th>
                                 <th class="p-3 border-bottom  text-center fs-1 fw border-secondary">
                                     Task
@@ -162,10 +166,11 @@
                                     Due Date
                                 </th>
                                 <th class="p-3 border-bottom  text-center fs-1 fw border-secondary">
-                                        Status
+                                    Status
                                 </th>
                                 <th class="p-3 border-bottom text-center fs-1 fw border-secondary">
-                                    <strong class="fs-3 fw"><label for=""><i class="fa-solid fa-pencil"></i>/<i class="fa-solid fa-trash"></i></label></strong>
+                                    <strong class="fs-3 fw"><label for=""><i class="fa-solid fa-pencil"></i>/<i
+                                                class="fa-solid fa-trash"></i></label></strong>
                                 </th>
                             </tr>
                         </thead>
@@ -191,13 +196,14 @@
                 <div class="container box1 box2 box3 box4 pb-3 pt-5">
 
                     <div class="position-relative">
-                        <img src="img/0c522a34-49a3-49b3-ba35-e0cc7adb7dc9.png"
+                        <img src="img/feedback.jpg"
                             class="w-100 boxsh box1 box2 box3 box4  ps-5 ms-5" alt="">
 
                         <div class="position-absolute start-0 top-0 ps-3 pt-1 ">
                             <div class="text-primary ps-5 ms-5 fs-3 pb-3">
                                 <h1>Employee Feedback</h1>
-                                <span>Share your feedback,complaint or suggestion regarding task or project below....</span>
+                                <span>Share your feedback,complaint or suggestion regarding task or project
+                                    below....</span>
                             </div>
                             <div>
                                 <form action="">
@@ -207,13 +213,13 @@
                                             id="name" class="w-75 input1 " placeholder="enter your name" required></div>
 
                                     <div class="ps-5 ms-5 pb-2 fs-3 fw-1 text-primary">Feedback Type <br>
-                                    <select name="" id="feedback" placeholder="enter your feedback type"
+                                        <select name="" id="feedback" placeholder="enter your feedback type"
                                             class="w-75 input1 text-primary" required>
-                                        <option value="" disabled selected>Select feedback</option>
-                                        <option value="Complaint">Complaint</option>    
-                                        <option value="Suggestion">Suggestion</option>    
-                                        <option value="General">General</option>    
-                                    </select>
+                                            <option value="" disabled selected>Select feedback</option>
+                                            <option value="Complaint">Complaint</option>
+                                            <option value="Suggestion">Suggestion</option>
+                                            <option value="General">General</option>
+                                        </select>
                                     </div>
                                     <div class="ps-5 ms-5 pb-2 fs-3 fw-1 text-primary">Message <label for=""><i
                                                 class="fa-regular fa-message"></i></label><br><textarea name=""
@@ -266,7 +272,7 @@
                 </footer>
             </section>
 
-                            <div class="border-bottom border-sec"></div>
+            <div class="border-bottom border-sec"></div>
 
 
 
@@ -287,39 +293,39 @@
     <!--=====================JAVA SCRIPT======================-->
 
 
-  <script> 
+    <script>
 
-    //count of number
+        //count of number
 
-    function updateCounts(){
-        let tasksdets = JSON.parse(localStorage.getItem("tasksdets")) || [];
+        function updateCounts() {
+            let tasksdets = JSON.parse(localStorage.getItem("tasksdets")) || [];
 
-        let total = tasksdets.length;
-        let pending = 0;
-        let inprogress = 0;
-        let completed = 0;
+            let total = tasksdets.length;
+            let pending = 0;
+            let inprogress = 0;
+            let completed = 0;
 
-        for(let i = 0 ; i < tasksdets.length ; i++){
-            if (tasksdets[i].status === "pending"){
-                pending = pending + 1;
+            for (let i = 0; i < tasksdets.length; i++) {
+                if (tasksdets[i].status === "pending") {
+                    pending = pending + 1;
+                }
+                if (tasksdets[i].status === "in progress") {
+                    inprogress = inprogress + 1;
+                }
+                if (tasksdets[i].status === "completed") {
+                    completed = completed + 1;
+                }
             }
-             if (tasksdets[i].status === "in progress"){
-                inprogress = inprogress + 1;
-            }
-             if (tasksdets[i].status === "completed"){
-                completed = completed + 1;
-            }
+
+            document.getElementById("total-count").innerText = total;
+            document.getElementById("pending-count").innerText = pending;
+            document.getElementById("inprogress-count").innerText = inprogress;
+            document.getElementById("completed-count").innerText = completed;
+
+
         }
 
-        document.getElementById("total-count").innerText = total ;
-        document.getElementById("pending-count").innerText = pending;
-        document.getElementById("inprogress-count").innerText = inprogress;
-        document.getElementById("completed-count").innerText = completed;
-
-
-    }
-
-    //task table
+        //task table
 
         fetchdata();
 
@@ -327,7 +333,7 @@
             const thbody = document.getElementById("employee-tbody");
             thbody.innerHTML = "";
             let tasksdets = JSON.parse(localStorage.getItem("tasksdets")) || [];
-            for (let index = 0 ; index < tasksdets.length; index++) {
+            for (let index = 0; index < tasksdets.length; index++) {
                 let i = tasksdets[index];
                 thbody.innerHTML += `<tr>
                        <td class="textcap text-center fs-4">${i.employeename} </td>
@@ -337,7 +343,7 @@
                     <td class="">   <button onclick="editTask(${index})" class="butdel"><i class="fa-solid fa-pencil"></i></button> 
                          <button onclick="deleteTask(${index})" class="butdel"><i class="fa-solid fa-trash"></i></button> </td>
                    </tr>`;
-                   updateCounts();
+                updateCounts();
             }
         }
 
@@ -350,7 +356,7 @@
             const status = document.getElementById("status").value;
             const thbody = document.getElementById("employee-thbody");
 
-            if ( employeename === "" || task === "" || duedate === "" || status === ""){
+            if (employeename === "" || task === "" || duedate === "" || status === "") {
                 alert("please fill all fields!");
                 return;
             }
@@ -368,28 +374,28 @@
             fetchdata();
         }
 
-        function deleteTask(index){
-            let tasksdets = JSON.parse(localStorage.getItem("tasksdets")) || [] ;
-            tasksdets.splice(index , 1);
-            localStorage.setItem("tasksdets" , JSON.stringify(tasksdets));
+        function deleteTask(index) {
+            let tasksdets = JSON.parse(localStorage.getItem("tasksdets")) || [];
+            tasksdets.splice(index, 1);
+            localStorage.setItem("tasksdets", JSON.stringify(tasksdets));
             fetchdata();
         }
 
-        function editTask(index){
-            let tasksdets = JSON.parse(localStorage.getItem("tasksdets")) || [] ;
-            let task = tasksdets[index] ;
+        function editTask(index) {
+            let tasksdets = JSON.parse(localStorage.getItem("tasksdets")) || [];
+            let task = tasksdets[index];
             document.getElementById("employeename").value = task.employeename;
             document.getElementById("task").value = task.task;
             document.getElementById("duedate").value = task.duedate;
             document.getElementById("status").value = task.status;
 
             tasksdets.splice(index, 1);
-            localStorage.setItem("tasksdets" , JSON.stringify(tasksdets));
+            localStorage.setItem("tasksdets", JSON.stringify(tasksdets));
             fetchdata();
 
         }
 
-//visible section 
+        //visible section 
 
         function showTasks() {
             document.getElementById("feedback").style.display = "none";
